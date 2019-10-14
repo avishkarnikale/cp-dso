@@ -2,16 +2,16 @@ pipeline {
   agent any 
   stages {
     stage('Check secrets'){
-        build 'Git-Secrets'
+      steps {build 'Git-Secrets'}
     }
     stage('Check dependencies'){
-        build 'OWASP-DEP-CHECK'
+      steps {build 'OWASP-DEP-CHECK'}
     }
     stage('Check XSS with ZAP'){
-        build 'OWASP-ZAP'
+      steps {build 'OWASP-ZAP'}
     }
     stage('Check XSS with Gauntlt'){
-        build 'Gauntlt-XSS-Attack'
+      steps {build 'Gauntlt-XSS-Attack'}
     }
   }
 }
