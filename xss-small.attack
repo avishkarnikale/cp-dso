@@ -1,0 +1,16 @@
+@slow
+Feature: Test our app for XSS vuln using arachni 
+
+Background:
+  Given "arachni" is installed
+  And the following profile:
+     | name       | value                            |
+     | url        | http://164.52.194.21:8008/login  |
+
+Scenario: A XSS attack to the login page
+  When I run an "arachni" attack with:
+  """
+  arachni --checks=xss --scope-page-limit=1 <url>
+  """
+  Then the output should contain "0 issues were detected."
+
