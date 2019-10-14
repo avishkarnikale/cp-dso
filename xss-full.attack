@@ -1,5 +1,5 @@
 @slow
-Feature: Test our app for XSS vuln using arachni 
+Feature: Test our app for full XSS vuln using arachni  
 
 Background:
   Given "arachni" is installed
