@@ -5,7 +5,7 @@ Background:
   Given "arachni" is installed
   And the following profile:
      | name       | value                            |
-     | url        | http://164.52.194.21:8008/login  |
+     | url        | http://164.52.194.222:8008/login  |
 
 Scenario: Complete XSS test login page
   When I launch an "arachni" attack with:
