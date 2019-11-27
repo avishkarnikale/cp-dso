@@ -6,7 +6,7 @@ Scenario: Identify SQL injection vulnerabilities on the login page
   Given "sqlmap" is installed
   And the following profile:
     | name        | value                                       |
-    | target_url  | http://164.52.194.222:8008/login  |
+    | target_url  | http://<YOUR_IP>:8008/login  |
   When I launch a "sqlmap" attack with:
     """
     python <sqlmap_path> -u <target_url> -v 1 --batch --forms --dbms sqlite -p uid,pw
